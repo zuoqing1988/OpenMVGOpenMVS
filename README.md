@@ -1,10 +1,15 @@
 ﻿2017年的时候用OpenMVG+OpenMVS串了一个三维建模流程。
 
 建模的命令是python xxxx_pipeline.py input_dir output_dir
+
 [1] python openMVG_openMVS_Pipeline_tradition.py data1\src data1\out1
+
 [2] python openMVG_openMVS_Pipeline_backup.py data1\src data1\out2
+
 [3] python openMVG_openMVS_Pipeline_nobackup.py data1\src data1\out3
+
 [4] python visualsfm_openmvs_Pipeline.py data1\src data1\out4
+
 [5] python pipeline_for_VSExMotion.py data1\src data1\vse
 
 命令[5]除了生成模型外还生成了一个info.txt，可以用程序ShowMVSResult.bat来观看，注意data\vse\show_config.txt是要手工写的，
