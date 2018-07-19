@@ -1,0 +1,15 @@
+win_width 1680
+win_height 1050
+focal_scale 0.833
+t_interpolation_method SPLINE
+q_interpolation_method SPLINE
+f_interpolation_method SPLINE
+set_view_to_focus 0
+render_to_image 0
+export_depth 1
+nframes_per_image 20
+model_path data1\vse\texture_mesh.obj
+info_path data1\vse\info.txt
+grab_dir data1\grab
+nthreads_for_writing 8
+full_screen 0

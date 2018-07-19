@@ -1,0 +1,53 @@
+image_directory :openMVGopenMVS\tmp
+sensor_width_database :openMVGopenMVS\sensor_width_camera_database.txt
+matches_directory :openMVGopenMVS\tmp\matches
+sfm_directory :openMVGopenMVS\tmp\sfm
+output_directory :openMVGopenMVS\tmp\sfm
+num_threads 10
+
+//for image_listing
+focal_pixels 3500
+//camera_model: 0 (PINHOLE_CAMERA), 1 (PINHOLE_CAMERA_RADIAL1), 2 (PINHOLE_CAMERA_RADIAL3), 3 (PINHOLE_CAMERA_BROWN)
+camera_model 1
+
+//for compute features
+//describer_method: 0 (SIFT), 1 (SIFT_ANATOMY), 2 (AKAZE_FLOAT), 3 (AKAZE_MLDB)
+describer_method 0
+
+//describer_preset: 0 (NORMAL), 1 (HIGH), 2 (ULTRA)
+describer_preset 2
+
+//auto determine describer_preset with the thresh auto_feature_num_limit
+auto_feature_num 0
+auto_feature_num_limit 8192
+
+//for matching
+//predefined_pairlist_file :
+
+//nearest_matching_method: 0 (AUTO), 1 (BRUTEFORCEL2), 2 (ANNL2), 3 (CASCADEHASHINGL2), 4 (FASTCASCADEHASHINGL2)
+//                         5 (BRUTEFORCEHAMMING)
+nearest_matching_method 1
+dist_ratio 0.7
+
+//for sfm
+use_tradition_method 0
+//only used when use_tradition_method=0
+max_resection_iter 2
+//only used when use_tradition_method=0
+resect_iter_backup 0
+//only used when use_tradition_method=0
+thresh_for_select 0.85
+//only used when use_tradition_method=0
+quality_thresh_for_resection_iter 0.9
+
+initial_pair_first :25.JPG
+initial_pair_second :18.JPG
+sfm_ply_outfile :sfm_data.ply
+sfm_data_filename :sfm_data.bin
+
+//for sfm_known_poses
+sfm_known_poses_data_filename_in :sfm_data_in.bin
+sfm_known_poses_data_filename_out :sfm_known_poses_data.bin
+direct_triangulation 0
+sfm_known_poses_pairlist_file :
+sfm_known_poses_bundle_adjust 1

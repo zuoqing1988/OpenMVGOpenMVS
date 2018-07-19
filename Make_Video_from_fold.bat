@@ -1,0 +1,1 @@
+openMVGopenMVS\MakeVideo.exe from_fold data10\grab.avi data10\grab 0 480 

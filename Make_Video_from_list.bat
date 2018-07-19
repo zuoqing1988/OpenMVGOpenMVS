@@ -1,0 +1,1 @@
+openMVGopenMVS\MakeVideo.exe from_list data27\grab.avi data27\grab\list.txt data27\grab
