@@ -24,3 +24,5 @@ MeshLab可以从这下载，采用默认路径安装。
 python用2不用3。Anaconda2也行。
 
 visualsfm_OpenMVS_pipeline.py 需要CUDA才能运行。
+
+看一下我做出来的一些结果https://pan.baidu.com/s/1RUSNM8pGh_UsGuUcstNjLQ
