@@ -18,7 +18,7 @@ def mkdir_ine(dirname):
     """Create the folder if not presents"""
     if not exists2(dirname):
         os.makedirs(dirname)
-        print dirname
+        print(dirname)
 
 def cleardir_ine(dirname):
     if not os.path.exists(dirname):
@@ -31,10 +31,10 @@ def cleardir_ine(dirname):
         filepath = os.path.join( dirname, f )
         if os.path.isfile(filepath):
             os.remove(filepath)
-            print filepath+" removed!"
+            print(filepath+" removed!")
         elif os.path.isdir(filepath):
             shutil.rmtree(filepath,True)
-            print "dir "+filepath+" removed!"
+            print("dir "+filepath+" removed!")
 
 def aug_path(path):
     flag = 0
@@ -53,12 +53,12 @@ def copy_jpg_fold_to_fold(src_fold, dst_fold):
         suffix = os.path.splitext(files[i])[1]
         if suffix.lower() == '.jpg'.lower():
             cmdline = 'copy /Y '+aug_path(os.path.join(src_fold,files[i]))+' '+aug_path(os.path.join(dst_fold,files[i]))
-            print cmdline
+            print(cmdline)
             os.system(cmdline)
 
 def copy_and_resize_one_thread(exiv2_name,ImageResize_name,src_name,dst_name,max_dim):
         cmdline = 'copy /Y '+aug_path(src_name)+' '+aug_path(dst_name)
-        print cmdline
+        print(cmdline)
         os.system(cmdline)
         if not extract_exif_of_image(exiv2_name, dst_name):
             if not image_resize(ImageResize_name,dst_name,dst_name,max_dim):

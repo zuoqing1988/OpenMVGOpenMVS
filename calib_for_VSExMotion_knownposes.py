@@ -1,5 +1,3 @@
-
-import commands
 import os
 import subprocess
 import sys
@@ -23,17 +21,17 @@ argc = len(sys.argv);
 if argc != 4:
     print 'input_dir output_dir backup_dir'
 
-input_dir = sys.argv[1]
-output_dir = sys.argv[2]
-backup_dir = sys.argv[3]
+input_dir = sys.argv[1].replace('/','\\')
+output_dir = sys.argv[2].replace('/','\\')
+backup_dir = sys.argv[3].replace('/','\\')
 
 time1 = time.time();
-print input_dir
-print output_dir
-print backup_dir
+print(input_dir)
+print(output_dir)
+print(backup_dir)
 ZQ_utils.mkdir_ine(output_dir)
 
-print 'Copy data to work directionary'
+print('Copy data to work directionary')
 ZQ_utils.cleardir_ine(WORK_DIR)
 ZQ_utils.mkdir_ine(WORK_DIR)
 ZQ_utils.mkdir_ine(matches_dir)
@@ -41,28 +39,28 @@ ZQ_utils.mkdir_ine(reconstruction_dir)
 ZQ_utils.copy_jpg_fold_to_fold(input_dir, WORK_DIR)
         
 cmdline = 'copy  '+ZQ_utils.aug_path(os.path.join(backup_dir,'sfm_data.bin')) + ' '+ ZQ_utils.aug_path(os.path.join(reconstruction_dir,'sfm_data_in.bin'))
-print cmdline
+print(cmdline)
 stats = os.system(cmdline)
 if stats != 0:
     sys.exit(1)
     
-print 'Run SFM PIPELINE'
+print('Run SFM PIPELINE')
 cmdline = ZQ_utils.aug_path(os.path.join(OPENMVG_BIN,'openMVG_pipeline_for_VSExMotion.exe'))+' '+ZQ_utils.aug_path(config_for_vse_file)+ '  1 '
 stats = os.system(cmdline)
 if stats != 0:
     sys.exit(1);
 
-print 'Copy SFM result to output_dir'
+print('Copy SFM result to output_dir')
 cmdline = 'copy '+ZQ_utils.aug_path(os.path.join(reconstruction_dir,'sfm_data.ply'))+' '+ZQ_utils.aug_path(os.path.join(output_dir,'sfm_data.ply'))
-print cmdline
+print(cmdline)
 os.system(cmdline)
 cmdline = 'copy '+ZQ_utils.aug_path(os.path.join(reconstruction_dir,'SfMStructureFromKnownPoses_Report.html'))+' '+ZQ_utils.aug_path(os.path.join(output_dir,'SfMStructureFromKnownPoses_Report.html'))
-print cmdline
+print(cmdline)
 os.system(cmdline)
 cmdline = 'copy '+ZQ_utils.aug_path(os.path.join(reconstruction_dir,'cam_info.txt'))+' '+ZQ_utils.aug_path(os.path.join(output_dir,'info.txt'))
-print cmdline
+print(cmdline)
 os.system(cmdline)
 
 time2 = time.time();
-print 'sfm cost time: '
-print time2-time1
+print('sfm cost time: ')
+print(time2-time1)
