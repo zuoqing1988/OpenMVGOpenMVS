@@ -19,7 +19,7 @@ focal = 1000;
 pair_list_file = 'pair_list.txt'
 argc = len(sys.argv);
 if argc != 4:
-    print 'input_dir output_dir backup_dir'
+    print('input_dir output_dir backup_dir')
 
 input_dir = sys.argv[1].replace('/','\\')
 output_dir = sys.argv[2].replace('/','\\')

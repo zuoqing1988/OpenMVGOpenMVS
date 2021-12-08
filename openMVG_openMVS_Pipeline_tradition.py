@@ -23,7 +23,7 @@ focal = 1000;
 pair_list_file = 'pair_list.txt'
 argc = len(sys.argv);
 if argc != 3 and argc != 4 and argc != 5:
-    print 'input_dir output_dir [focal] [pair_list_file]'
+    print('input_dir output_dir [focal] [pair_list_file]')
     sys.exit(1)
 
 time1 = time.time()
@@ -106,7 +106,7 @@ cmdline = 'copy '+ZQ_utils.aug_path(os.path.join(reconstruction_dir,'SfMReconstr
 print(cmdline)
 os.system(cmdline)
 cmdline = 'copy '+ZQ_utils.aug_path(os.path.join(reconstruction_dir,'SfMStructureFromKnownPoses_Report.html'))+' '+ZQ_utils.aug_path(os.path.join(output_dir,'SfMStructureFromKnownPoses_Report.html'))
-print cmdline
+print(cmdline)
 os.system(cmdline)
 cmdline = 'copy '+ZQ_utils.aug_path(os.path.join(reconstruction_dir,'cam_info.txt'))+' '+ZQ_utils.aug_path(os.path.join(output_dir,'info.txt'))
 print(cmdline)
