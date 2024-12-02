@@ -1,5 +1,4 @@
 import os
-import subprocess
 import sys
 import shutil
 import time
@@ -46,5 +45,4 @@ print(cmdline)
 os.system(cmdline)
 
 time2 = time.time();
-print('sfm cost time: ')
-print(time2-time1)
+print('sfm cost time: %f'%(time2-time1))

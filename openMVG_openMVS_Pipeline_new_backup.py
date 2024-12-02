@@ -1,5 +1,4 @@
 import os
-import subprocess
 import sys
 import shutil
 import time
@@ -110,8 +109,7 @@ print(cmdline)
 os.system(cmdline)
 
 time2 = time.time()
-print('openMVG cost time: ')
-print(time2-time1)
+print('openMVG cost time: %f'%(time2-time1))
 
 
 print('Export to openMVS')
@@ -178,7 +176,5 @@ print(cmdline)
 os.system(cmdline)
 
 time3 = time.time()
-print('openMVS cost time: ')
-print(time3-time2)
-print('Done! total cost time: ')
-print(time3-time1)
+print('openMVS cost time: %f'%(time3-time2))
+print('Done! total cost time: %f'%(time3-time1))

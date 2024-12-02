@@ -1,5 +1,4 @@
 import os
-import subprocess
 import sys
 import time
 
@@ -76,8 +75,7 @@ print(cmdline)
 os.system(cmdline)
 
 time2 = time.time();
-print('sfm cost time: ')
-print(time2-time1)
+print('sfm cost time: %f'%(time2-time1))
 
 print('Export to openMVS')
 cmdline = ZQ_utils.aug_path(os.path.join(OPENMVG_BIN,'openMVG_main_openMVG2openMVS.exe'))+ ' -i '+ZQ_utils.aug_path(os.path.join(reconstruction_dir,'sfm_data.bin'))+' -o '+ZQ_utils.aug_path(os.path.join(mvs_dir,'scene.mvs'))+' -d '+ZQ_utils.aug_path(mvs_dir)
@@ -128,8 +126,5 @@ print(cmdline)
 os.system(cmdline)
 
 time3 = time.time()
-print('MVS cost time: ')
-print(time3-time2)
-
-print('Done! total cost time: ')
-print(time3-time1)
+print('MVS cost time: %f'%(time3-time2))
+print('Done! total cost time: %f'%(time3-time1))

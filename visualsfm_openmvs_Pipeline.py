@@ -1,4 +1,3 @@
-import subprocess
 import os
 import sys
 import shutil
@@ -37,8 +36,7 @@ print(cmdline)
 os.system(cmdline)
 
 time2 = time.time()
-print('visual sfm cost time: ')
-print(time2-time1)
+print('visual sfm cost time: %f'%(time2-time1))
 
 print('Extract pose from NVM')
 cmdline = ZQ_utils.aug_path(os.path.join(OPENMVS_BIN,'ExtractPoseFromNVM.exe'))+' '+ZQ_utils.aug_path(os.path.join(WORK_DIR,'visualsfm.nvm'))+' '+ZQ_utils.aug_path(os.path.join(output_dir,'info.txt'))
@@ -108,7 +106,5 @@ print(cmdline)
 os.system(cmdline)
 
 time3 = time.time()
-print('openMVS cost time: ')
-print(time3-time2)
-print('Done! total cost time: ')
-print(time3-time1)
+print('openMVS cost time: %f'%(time3-time2))
+print('Done! total cost time: %f'%(time3-time1))
